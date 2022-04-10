@@ -1,12 +1,18 @@
-# { pkgs ? import <nixpkgs> {} }:
-# with pkgs;
+let
+  pkgs = import <nixpkgs> {};
+  inherit (pkgs)
+    mkShell
+    vim
+    nodejs
+    jq
+  ;
+in mkShell {
+  name = "dev";
 
-with (import <nixpkgs> {});
-
-mkShell {
   buildInputs = [
     vim
     nodejs
+    jq
   ];
 
   shellHook = ''
