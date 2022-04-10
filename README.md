@@ -11,5 +11,7 @@ nix repl '<nixpkgs>'
 
 nix repl <filename>
 
+nix-instantiate --eval -E "with import <nixpkgs> {}; expr"
+
 nix-shell
 ```
